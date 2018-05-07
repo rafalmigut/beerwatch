@@ -1,0 +1,25 @@
+.beer-info {
+  font-family: "Lucida Sans";
+  color: darkgray;
+  text-align: justify;
+  /*margin: 10px;*/
+}
+
+.beer-title {
+  color: grey;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.beer-params {
+  color: grey;
+  font-weight: bold;
+}
+
+hr {
+  color: #ffcc00;
+  background: #ffcc00;
+  width: 15%;
+  height: 5px;
+  margin-left: 0;
+}

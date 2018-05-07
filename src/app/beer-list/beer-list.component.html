@@ -1,0 +1,26 @@
+<div class="row" id="scrollMe">
+  <app-beer-details
+    class="col-md-4"
+    style="text-align: center"
+    *ngFor="let beer of beerList"
+    [beerDetails]="beer"
+
+  >
+  </app-beer-details>
+  <div
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="100"
+    [infiniteScrollContainer]="infScrollContainer"
+    (scrolled)="onScroll()">
+  </div>
+
+  <div *ngIf="!finished">
+    Pouring more beers...
+  </div>
+
+
+  <div *ngIf="finished">
+    It's out of beer. Remember - don't drink too much!
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-4">
+    <img src="{{ beerInfo.image_url }}" alt="" height="400px">
+  </div>
+  <div class="col-md-8 beer-info" >
+    <div class="row beer-title">{{ beerInfo.name }}</div>
+    <div class="row">{{ beerInfo.tagline }}</div>
+    <hr>
+    <br>
+    <div class="row"><span class="beer-params">IBU: </span>  {{ beerInfo.ibu }} <span class="beer-params">ABV: </span>  {{ beerInfo.abv }} <span class="beer-params">EBC: </span>  {{ beerInfo.ebc }}</div>
+    <br>
+    <div class="row" style="margin-right: 20px">{{ beerInfo.description }}</div>
+    <br>
+    <div class="row beer-title">Best served with:</div>
+    <div class="row" *ngFor="let serveProposition of beerInfo.food_pairing">- {{ serveProposition }}</div>
+  </div>
+  <br>
+  <div class="col-md-12 beer-info beer-title">You might also like:</div>
+  <br>
+  <div
+  *ngFor="let similarBeer of similarBeerList"
+  class="col-md-4 beer-details"
+  (click)="openModal()">
+  <img src="{{ similarBeer.image_url }}" alt="" height="200px">
+  <p class="beer-title">{{ similarBeer.name }}</p>
+  </div>
+  <!--<app-beer-details-->
+    <!--class="col-md-4"-->
+    <!--style="text-align: center"-->
+    <!--*ngFor="let beer of similarBeerList"-->
+    <!--[beerDetails]="beer">-->
+  <!--</app-beer-details>-->
+</div>

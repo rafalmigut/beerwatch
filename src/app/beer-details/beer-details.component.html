@@ -1,0 +1,21 @@
+<div class="beer-details grow"
+     (click)="openModal()">
+  <img src="{{ beerDetails.image_url }}" alt="" height="200px">
+  <p class="beer-title">{{ beerDetails.name }}</p>
+  <p class="beer-description">{{ beerDetails.tagline }}</p>
+</div>
+<!--modal-->
+<div class="backdrop" [ngStyle]="{'display':display}"></div>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document" style="max-width: 1000px">
+    <div class="modal-content">
+      <div class="modal-footer" >
+        <button type="button" class="btn btn-default" (click)="onCloseHandled()">Close</button>
+      </div>
+      <div class="modal-body">
+        <app-beer-info
+        [beerInfo]="beerDetails"></app-beer-info>
+      </div>
+    </div>
+  </div>
+</div>
